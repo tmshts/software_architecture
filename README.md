@@ -1,3 +1,10 @@
+This project was a part of a course Software Architecture at Università della Svizzera italiana (USI) in Lugano.
+
+A goal was to pick up a web or mobile application and create a suitable software architecture for this app.
+
+In order to see my suggested software architecture, you can go directly to src/sa/model/ and open the index.md. 
+
+
 # MSDE Software Architecture 2022
 
 Modeling Assignment Repository
