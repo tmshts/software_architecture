@@ -1,0 +1,72 @@
+
+/// First the Feature Tree
+
+/// Adding [*] before the feature name will make it Required
+/// Adding [ ] before the feature name will mark it as Optional
+
+/// Composite features can express constraints between their sub-features
+/// { } a set of exclusive features (pick one)
+/// ( ) any combination of the features is possible
+/// [ ] a set of features (usually combined with the [*] [ ] annotation)
+
+Trading aggregator : [
+    [ ] Price alert : (
+        1 Stock,
+        1 Cryptocurrency,
+        Selected stocks,
+        Selected cryptocurrencies,
+        Portfolio
+    ),
+    [*] Currency : (
+        Euro,
+        USD
+    ),
+    [ ] Notification : (
+        Email,
+        WhatsApp
+    ),
+    [*] Visualization : (  
+        Static,
+        Dynamic
+    ),
+    [*] Graph : (
+        Line Graph,
+        Pie Chart
+    ),
+    [*] Trading platform : (
+        Cryptocurrency : (
+            Coinbase,
+            Binance,
+            Kraken,
+            etc.
+        ),
+        Stock : (
+            InteractiveBrokers,
+            Fidelity,
+            Robinhood,
+            Trading212,
+            etc.
+        )
+    )
+]
+
+/// Then the feature relationships
+
+/// Implication
+Static => Pie Chart
+Dynamic => Line Graph
+1 Stock => Stock
+Selected stocks => Stock
+1 Cryptocurrency => Cryptocurrency
+Selected cryptocurrencies => Cryptocurrency
+Portfolio => Trading platform
+Price alert => Notification
+
+/// Exclusive
+Dynamic <--> Pie Chart
+Static <--> Line Graph
+/// 1 Stock <--> Cryptocurrency
+/// Selected stocks <--> Cryptocurrency
+/// 1 Cryptocurrency <--> Stock
+/// Selected cryptocurrencies <--> Stock
+

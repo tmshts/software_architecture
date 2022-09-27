@@ -1,0 +1,23 @@
+/// The Connector View is a graph of components/connectors
+
+/// Simple 1-1 connectors are modeled on the edges
+
+User Interface -call-> Trading Agregator
+
+Trading Agregator -queue-> Schedule
+Schedule -queue-> Trading Agregator
+
+Trading Agregator -queue-> Graph visualization
+Trading Agregator <- Graph visualization
+
+Trading Agregator -> web API -> Gmail Handler
+
+Trading Agregator -call-> Database
+
+Trading Agregator <- web API <- Trading Platforms
+
+Trading Agregator <- web API <- Exchange rate
+
+
+/// Edges can flow in either or both directions
+/// -> <- <->

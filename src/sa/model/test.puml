@@ -1,0 +1,18 @@
+@startuml
+
+skinparam componentStyle rectangle
+skinparam monochrome true
+skinparam shadowing false
+
+rectangle "Design Time" {
+
+rectangle "Developer" as Source
+rectangle "In 2 hours" as Measure
+
+Source -> [Code] : "Change the GUI"
+
+[Code] -> [Measure] : "GUI changed"
+
+}
+
+@enduml
